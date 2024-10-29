@@ -23,9 +23,9 @@ test('Verify export Job Comments Report', async ({ page }, testInfo) => {
   await page.keyboard.press("Enter");
   await page.locator("(//div[contains(@class,'ms-Checkbox is-enabled')])[2]").click();
   await page.locator("//span[normalize-space(text())='Report']").click();
-  await page.waitForTimeout(8000);
+  await page.waitForTimeout(3000);
   await page.click('button[aria-label="Opportunity Job Comment Report"]');
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(5000);
   
   const [newTab] = await Promise.all([
     page.waitForEvent('popup'),
