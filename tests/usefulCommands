@@ -1,0 +1,11 @@
+npx playwright test filteringOpportunity.spec.ts
+npx playwright test pricing_tier_e2e.spec.ts
+npx playwright codegen https://nthcrm-test.crm.dynamics.com/main.aspx?appid=aa6ffe26-ba5d-44d3-9d87-09e23d665f73
+npx playwright test --grep "pricing tier"
+npx playwright show-report
+git rm --cached ./results.json
+git rm --cached ./results.xml
+git commit -m "Stop tracking results.json and results.xml add it to .gitignore"
+git check-ignore -v ./results.xml
+git check-ignore -v ./results.json
+git push origin main
