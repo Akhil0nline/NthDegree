@@ -1,9 +1,12 @@
-import { chromium } from '@playwright/test';
+import { chromium, FullConfig } from '@playwright/test';
 import logout from './helper/logout';
 import * as dotenv from 'dotenv';
+const AdmZip = require("adm-zip");
 dotenv.config();
 
-async function globalTeardown() {
+async function globalTeardown(config: FullConfig) {
+
+  
 
 	const browser = await chromium.launch();
 	const context = await browser.newContext();
@@ -19,6 +22,16 @@ async function globalTeardown() {
     await browser.close();
   }
   browser.close();
+
+  console.log("Report path" + config.rootDir);
+
+  const reportPath = config.rootDir + "//report";
+  console.log("Report path:" + reportPath);
+
+  var zip = new AdmZip();
+  zip.addLocalFolder(reportPath, "./report");
+  zip.writeZip("./report.zip");
+
 }
 
 export default globalTeardown;
