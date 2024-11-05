@@ -5,9 +5,7 @@ const AdmZip = require("adm-zip");
 dotenv.config();
 
 async function globalTeardown(config: FullConfig) {
-
   
-
 	const browser = await chromium.launch();
 	const context = await browser.newContext();
 	const page = await context.newPage();
@@ -22,15 +20,6 @@ async function globalTeardown(config: FullConfig) {
     await browser.close();
   }
   browser.close();
-
-  console.log("Report path" + config.rootDir);
-
-  const reportPath = config.rootDir + "//report";
-  console.log("Report path:" + reportPath);
-
-  var zip = new AdmZip();
-  zip.addLocalFolder(reportPath, "./report");
-  zip.writeZip("./report.zip");
 
 }
 

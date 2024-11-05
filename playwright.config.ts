@@ -64,7 +64,7 @@ export default defineConfig({
     navigationTimeout: 10000,
   },
     globalSetup: require.resolve('./global-setup.ts'),
-    globalTeardown: require.resolve('./global-teardown.ts'),
+    globalTeardown: require.resolve('./global-teardown.ts'), 
 
   /* Configure projects for major browsers */
   projects: [
@@ -82,13 +82,13 @@ export default defineConfig({
         dependencies: ['setup'], 
     },
 
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'], 
-    //     storageState: '.auth/user.json' 
-    //    },
-    //    dependencies: ['setup'], 
-    // },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'], 
+        storageState: '.auth/user.json' 
+       },
+       dependencies: ['setup'], 
+    },
 
     // {
     //   name: 'webkit',

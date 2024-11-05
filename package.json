@@ -23,6 +23,7 @@
     "ejs": "^3.1.10",
     "fs": "^0.0.1-security",
     "luxon": "^3.5.0",
+    "node-7z": "^3.0.0",
     "ortoni-report": "^2.0.5",
     "pdf-parse": "^1.1.1",
     "playwright": "^1.47.2",

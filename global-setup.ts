@@ -1,4 +1,4 @@
-import { chromium, FullConfig } from '@playwright/test';
+import { chromium } from '@playwright/test';
 import login from './helper/login'
 import * as dotenv from 'dotenv';
 dotenv.config();
