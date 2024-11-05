@@ -11,7 +11,7 @@ const reportConfig: OrtoniReportConfig = {
   testType: "Release - Oct 21, 2024",
   authorName: "Akhil",
   preferredTheme: "dark",
-  base64Image: true,
+  base64Image: false,
 };
 
 const config: PlaywrightTestConfig = defineConfig({
