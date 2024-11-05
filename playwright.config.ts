@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices, PlaywrightTestConfig } from '@playwright/test';
 import { OrtoniReportConfig } from 'ortoni-report';
 require('dotenv').config();
 
@@ -14,7 +14,7 @@ const reportConfig: OrtoniReportConfig = {
   base64Image: true,
 };
 
-export default defineConfig({
+const config: PlaywrightTestConfig = defineConfig({
   
   timeout: 5 * 60 * 1000,
   globalTimeout: 500000,
@@ -119,3 +119,5 @@ export default defineConfig({
   //   },
   ],
 });
+
+export default config;
