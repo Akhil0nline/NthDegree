@@ -64,7 +64,7 @@ const config: PlaywrightTestConfig = defineConfig({
     navigationTimeout: 10000,
   },
     globalSetup: require.resolve('./global-setup.ts'),
-    globalTeardown: require.resolve('./global-teardown.ts'), 
+    globalTeardown: "./helper/zipglobal.ts", 
 
   /* Configure projects for major browsers */
   projects: [
